@@ -120,7 +120,48 @@ UUID=f5a90ae5-f49d-4d7d-8ab7-d1050ef911e9 /hdd1 ext4 defaults 0 0
 ```bash
 sudo mount -a
 ```
-5. Checking mounted hard disk list
+5. Checking mounted hard disk lists
 ```bash
 df -h
 ```
+
+## Useful commands
+- Checking share of CPU and DRAM
+```bash
+htop
+```
+- Checking storage of disks
+```bash
+df -h
+```
+- Checking OS information
+```bash
+lsb_release -a
+```
+- Checking CPU model information
+```bash
+cat /proc/cpuinfo | grep CPU | head -1
+```
+- Checking CPU core numbers
+```bash
+cat /proc/cpuinfo | grep CPU | wc -l
+```
+- Checking Network information
+```bash
+ifconfig
+```
+
+## Server Stress test
+- CPU
+```bash
+sudo apt-get install stress-ng stress -y
+stress -c <number of cores> --io 4 --hdd 1 --hdd-bytes 1024m -t 36000m --vm-bytes $(awk '/MemFree/{printf "%d\n", $2 * 0.097;}' < /proc/meminfo)k --vm-keep -m 10
+```
+- GPU
+```bash
+CUDA_VISIBLE_DEVICES=0 python3 gpu_test.py &
+CUDA_VISIBLE_DEVICES=1 python3 gpu_test.py &
+CUDA_VISIBLE_DEVICES=2 python3 gpu_test.py &
+...
+```
+
