@@ -85,7 +85,8 @@ vim ~/.jupyter/jupyter_notebook_config.py
 # c.NotebookApp.port
 ```
 4. Add scripts in /etc/rc.local
--/etc/rc.local
+
+- /etc/rc.local
 ```bash
 su <username> -c "jupyter notebook --config=/location/of/your/config/file/.jupyter/jupyter_notebook_config.py --no-browser --notebook-dir=/location/of/yournotebooks" &
 ```
