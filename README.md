@@ -175,11 +175,13 @@ CUDA_VISIBLE_DEVICES=2 python3 gpu_test.py &
 
 ## SSH connection using Putty, Xming (On Windows)
 1. Download and install Xming from below link.
+
 https://sourceforge.net/projects/xming/
 
 2. Launch the XLounch, and save default property(path doesn't matter).
 
 3. Download and install Putty from below link.
+
 https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
 
 4. Launch Putty and click Category-Connection-SSH-X11. Check 'Enable X11 forwarding' off.
