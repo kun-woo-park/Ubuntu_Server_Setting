@@ -198,6 +198,7 @@ CUDA_VISIBLE_DEVICES=2 python3 gpu_test.py &
 sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install python3-pip libopenblas-base libopenmpi-dev
+python3 -m pip install --upgrade pip
 ```
 - Install jtop
 ```bash
