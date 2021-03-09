@@ -191,3 +191,21 @@ CUDA_VISIBLE_DEVICES=2 python3 gpu_test.py &
 6. Save your network properties and click open button.
 
 *** You should launch Xming before Putty if you want to use xwindow system.
+
+## Setting on Jetson Xavier (Jetpack 4.4)
+- Install utilities
+``` bash
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install python3-pip libopenblas-base libopenmpi-dev
+```
+- Install jtop
+```bash
+sudo -H pip install -U jetson-stats
+```
+- Install pytorch
+```bash
+wget https://nvidia.box.com/shared/static/3ibazbiwtkl181n95n9em3wtrca7tdzp.whl -O torch.whl
+sudo pip3 install torch-1.5.0-cp36-cp36m-linux_aarch64.whl
+sudo pip3 install torchvision
+```
